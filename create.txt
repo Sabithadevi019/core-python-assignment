@@ -1,0 +1,10 @@
+import mysql.connector as c
+mydb=c.connect(
+    host="localhost",
+    user="root",
+    password="1234",
+    database="retail"
+)
+mycursor=mydb.cursor()
+
+mycursor.execute("create table sailor(sid int,name varchar(30),price int,city varchar(20)")

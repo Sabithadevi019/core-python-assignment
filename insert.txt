@@ -1,0 +1,15 @@
+import mysql.connector as c
+mydb =c.connect(
+  host="localhost",
+  user="root",
+  password="1234",
+  database="retail"
+)
+mycursor = mydb.cursor()
+name=input("Enter your name")
+id = input("Enter your id")
+price=input("Enter your price")
+city=input("Enter city")
+mycursor.execute("insert into sailor values(%s,%s,%s,%s)",(id,name,price,city))
+
+mydb.commit()

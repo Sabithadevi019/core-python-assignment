@@ -1,0 +1,14 @@
+import mysql.connector as c
+mydb =c.connect(
+  host="localhost",
+  user="root",
+  password="1234",
+  database="retail"
+)
+mycursor = mydb.cursor()
+name=input("Enter your name")
+id = input("Enter your id")
+price=input("Enter your price")
+city=input("Enter city")
+mycursor.execute("update sailor set name=%s where sid=%s ",(name,id,price,city))
+mydb.commit()
